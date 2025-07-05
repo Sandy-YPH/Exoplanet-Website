@@ -1,0 +1,22 @@
+title: Exoplanet Explorer
+description: Membandingkan exoplanet dengan Bumi berdasarkan data NASA.
+author: Sandy Yoga Prakasa Holley
+email: sandyyogaprakasaholley@gmail.com
+baseurl: "" 
+url: "" 
+
+markdown: kramdown
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-assets
+
+hero_image: /assets/images/hero-bg.jpg
+
+assets:
+  sources:
+    - _assets/css
+    - _assets/js
+    - _assets/images

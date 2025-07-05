@@ -1,0 +1,352 @@
+
+@import "minima"; 
+
+// Custom variables for dark mode and futuristic theme
+$text-color: #E0E0E0;
+$background-color: #1A1A2E;
+$accent-color: #0F3460;
+$highlight-color: #E94560;
+$link-color: #70A1FF;
+
+// Typography
+$font-family-heading: 'Orbitron', sans-serif;
+$font-family-body: 'Space Mono', monospace;
+
+// General body styles
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: $font-family-body;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; // Prevent horizontal scroll due to animations
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-heading;
+  color: $highlight-color;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+// Links
+a {
+  color: $link-color;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    color: lighten($link-color, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+// Wrapper for content centering
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// Header styles
+.site-header {
+  background-color: $accent-color;
+  padding: 20px 0;
+  border-bottom: 1px solid darken($accent-color, 10%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+
+  .site-title {
+    font-family: $font-family-heading;
+    font-size: 1.8em;
+    color: $highlight-color;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    float: left;
+    line-height: 1;
+    padding-top: 5px;
+  }
+
+  .site-nav {
+    float: right;
+
+    .page-link {
+      color: $text-color;
+      margin-left: 20px;
+      font-size: 1.1em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        display: block;
+        margin-top: 5px;
+        right: 0;
+        background: $highlight-color;
+        transition: width 0.3s ease;
+      }
+
+      &:hover:after {
+        width: 100%;
+        left: 0;
+        background: $highlight-color;
+      }
+    }
+  }
+
+  // Mobile navigation toggle
+  .nav-trigger {
+    display: none;
+  }
+
+  .menu-icon {
+    display: none; // Hidden by default, shown on mobile
+  }
+
+  @media screen and (max-width: 768px) {
+    .site-title {
+      float: none;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .site-nav {
+      float: none;
+      text-align: center;
+
+      .menu-icon {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 18px;
+        height: 15px;
+        fill: $text-color;
+        cursor: pointer;
+      }
+
+      .trigger {
+        display: none;
+        &.active {
+          display: block;
+        }
+      }
+
+      .nav-trigger:checked + label + .trigger {
+        display: block;
+        position: absolute;
+        background-color: $accent-color;
+        width: 100%;
+        left: 0;
+        padding: 10px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        .page-link {
+          display: block;
+          padding: 10px 0;
+          margin: 0;
+          border-bottom: 1px solid darken($accent-color, 15%);
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Hero Section (index.md)
+.hero-section {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-image: url('{{ site.hero_image | relative_url }}');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden; // For particle effects or subtle animations
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); // Dark overlay
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+
+    h1 {
+      font-size: 3.5em;
+      margin-bottom: 20px;
+      color: $highlight-color;
+      text-shadow: 0 0 10px rgba(233, 69, 96, 0.8);
+    }
+
+    p {
+      font-size: 1.3em;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: $highlight-color;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        background-color: lighten($highlight-color, 10%);
+        transform: translateY(-3px);
+      }
+    }
+  }
+}
+
+// General content styles
+.page-content {
+  padding: 50px 0;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: $accent-color;
+    color: $text-color;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+
+    th, td {
+      padding: 12px 15px;
+      border: 1px solid darken($accent-color, 10%);
+      text-align: left;
+    }
+
+    th {
+      background-color: darken($accent-color, 5%);
+      font-family: $font-family-heading;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: $highlight-color;
+    }
+
+    tr:nth-child(even) {
+      background-color: lighten($accent-color, 5%);
+    }
+
+    tr:hover {
+      background-color: lighten($accent-color, 10%);
+      transition: background-color 0.3s ease;
+    }
+  }
+
+  // Chart specific styles
+  #similarityChart {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: $accent-color;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+}
+
+// Footer styles
+.site-footer {
+  background-color: $accent-color;
+  padding: 30px 0;
+  border-top: 1px solid darken($accent-color, 10%);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+
+  .footer-heading {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: $highlight-color;
+  }
+
+  .footer-col-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-col {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+    padding: 10px;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 0.9em;
+      line-height: 1.5;
+    }
+  }
+}
+
+// Responsive adjustments
+@media screen and (max-width: 600px) {
+  .hero-section .hero-content h1 {
+    font-size: 2.5em;
+  }
+  .hero-section .hero-content p {
+    font-size: 1em;
+  }
+  .page-content {
+    padding: 30px 0;
+  }
+  .site-footer .footer-col {
+    min-width: 100%;
+  }
+}
+
+// Hover effects for cards/elements (example for future use)
+.card {
+  background-color: $accent-color;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  }
+}
+
+// Scroll animations (AOS.js classes will be added directly in HTML)
+// Example: <div data-aos="fade-up">...</div>
+

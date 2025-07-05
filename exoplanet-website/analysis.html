@@ -1,0 +1,41 @@
+---
+layout: page
+title: Exoplanet Analysis Results
+---
+
+<section class="wrapper">
+  <h2 data-aos="fade-right">Top 10 Earth-Like Exoplanets</h2>
+  <p data-aos="fade-right" data-aos-delay="100">Berikut adalah daftar 10 exoplanet teratas yang paling mirip dengan Bumi, diurutkan berdasarkan Similarity Score (ESI).</p>
+
+  <div class="table-container" data-aos="fade-up" data-aos-delay="200">
+    <table>
+      <thead>
+        <tr>
+          <th>Planet Name</th>
+          <th>Similarity Score</th>
+          <th>Mass (Earth Masses)</th>
+          <th>Radius (Earth Radii)</th>
+          <th>Equilibrium Temperature (K)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for planet in site.data.exoplanets %}
+        <tr data-aos="fade-up" data-aos-delay="{{ forloop.index | times: 50 }}">
+          <td>{{ planet.pl_name }} <i class="fas fa-globe-americas planet-icon"></i></td>
+          <td>{{ planet.similarity_score | round: 4 }}</td>
+          <td>{{ planet.pl_bmasse | round: 2 }}</td>
+          <td>{{ planet.pl_rade | round: 2 }}</td>
+          <td>{{ planet.T_eq_corrected | round: 2 }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <h2 data-aos="fade-left" data-aos-delay="300">Comparative Analysis Chart</h2>
+  <p data-aos="fade-left" data-aos-delay="400">Grafik di bawah ini memvisualisasikan perbandingan skor kemiripan dan parameter kunci lainnya dari 10 exoplanet teratas.</p>
+
+  <div class="chart-container" data-aos="zoom-in" data-aos-delay="500">
+    {% include chart.html %}
+  </div>
+</section>

@@ -1,0 +1,72 @@
+  [
+  {
+    "pl_name": "G 192-15 b",
+    "similarity_score": 0.979785,
+    "pl_bmasse": 1.03,
+    "pl_rade": 1.02,
+    "T_eq_corrected": 297.056496
+  },
+  {
+    "pl_name": "K2-72 d",
+    "similarity_score": 0.972786,
+    "pl_bmasse": 1.01,
+    "pl_rade": 1.01,
+    "T_eq_corrected": 307.882048
+  },
+  {
+    "pl_name": "LP 791-18 d",
+    "similarity_score": 0.969552,
+    "pl_bmasse": 0.9,
+    "pl_rade": 1.032,
+    "T_eq_corrected": 284.055935
+  },
+  {
+    "pl_name": "K2-239 c",
+    "similarity_score": 0.951015,
+    "pl_bmasse": 0.972,
+    "pl_rade": 1.0,
+    "T_eq_corrected": 326.571802
+  },
+  {
+    "pl_name": "YZ Cet c",
+    "similarity_score": 0.945844,
+    "pl_bmasse": 1.14,
+    "pl_rade": 1.05,
+    "T_eq_corrected": 271.142596
+  },
+  {
+    "pl_name": "K2-129 b",
+    "similarity_score": 0.931487,
+    "pl_bmasse": 1.12,
+    "pl_rade": 1.04,
+    "T_eq_corrected": 323.98167
+  },
+  {
+    "pl_name": "Kepler-1649 b",
+    "similarity_score": 0.927675,
+    "pl_bmasse": 1.03,
+    "pl_rade": 1.017,
+    "T_eq_corrected": 239.176168
+  },
+  {
+    "pl_name": "EPIC 201170410.02",
+    "similarity_score": 0.927249,
+    "pl_bmasse": 1.15,
+    "pl_rade": 1.047,
+    "T_eq_corrected": 322.407807
+  },
+  {
+    "pl_name": "K2-315 b",
+    "similarity_score": 0.921904,
+    "pl_bmasse": 0.809,
+    "pl_rade": 0.95,
+    "T_eq_corrected": 314.413539
+  },
+  {
+    "pl_name": "SPECULOOS-3 b",
+    "similarity_score": 0.913279,
+    "pl_bmasse": 0.894,
+    "pl_rade": 0.977,
+    "T_eq_corrected": 345.576108
+  }
+]
